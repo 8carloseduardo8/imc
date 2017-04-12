@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcule seu IMC</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <script>
+    function calcula_imc() {
+      var altura = document.imcForm.altura.value;
+      var peso = document.imcForm.peso.value;
+
+      var elem = document.getElementById("resultado");
+
+      var quadrado = (altura * altura);
+
+      var calculo = (peso / quadrado);
+
+      if (calculo < 18.5) {
+        elem.innerHTML = "VOCÊ ESTÁ MAGRO!";
+      }
+      else if (calculo >= 18.5 && calculo < 24.9) {
+        elem.innerHTML = "VOCÊ ESTÁ NORMAL";
+      }
+
+      else if (calculo >= 25 && calculo < 29.9) {
+        elem.innerHTML = "VOCÊ ESTÁ COM SOBRE PESO";
+      }
+      else if (calculo >= 30 && calculo < 39.9) {
+        elem.innerHTML = "VOCÊ ESTÁ COM OBESIDADE";
+      }
+      else if (calculo > 40)
+        elem.innerHTML = "VOCÊ ESTÁ COM OBESIDADE GRAVE";
+
+    }
+  </script>
+
+</head>
+
+<body style="padding: 20px">
+  <form name="imcForm" id="imcForm" action="#">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Calcule seu IMC</div>
+      <div class="panel-body">
+
+        <div class="form-group">
+          <label for="peso">Peso:</label>
+          <div class="input-group">
+            <input id="peso" type="text" class="form-control input-lg" placeholder="Digite o seu Peso">
+            <span class="input-group-addon">Kg</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="altura">Altura:</label>
+          <div class="input-group">
+            <input id="altura" type="text" class="form-control input-lg" placeholder="Digite sua Altura">
+            <span class="input-group-addon">m</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sexo">Sexo:</label>
+          <select class="form-control input-lg" id="sexo">
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-lg" onclick="calcula_imc()">Calcular</button>
+
+        <div class="alert">
+          <label id="resultado"></label>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
