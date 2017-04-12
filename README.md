@@ -1,2 +1,2 @@
-# imc
-Cálculo do indice de massa corporal
+# Mini Biografia
+Uma mini biografia de Carlos Eduardo Teles Rosa

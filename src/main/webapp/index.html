@@ -9,76 +9,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
 
-  <script>
-    function calcula_imc() {
-      var altura = document.imcForm.altura.value;
-      var peso = document.imcForm.peso.value;
-
-      var elem = document.getElementById("resultado");
-
-      var quadrado = (altura * altura);
-
-      var calculo = (peso / quadrado);
-
-      if (calculo < 18.5) {
-        elem.innerHTML = "VOCÊ ESTÁ MAGRO!";
-      }
-      else if (calculo >= 18.5 && calculo < 24.9) {
-        elem.innerHTML = "VOCÊ ESTÁ NORMAL";
-      }
-
-      else if (calculo >= 25 && calculo < 29.9) {
-        elem.innerHTML = "VOCÊ ESTÁ COM SOBRE PESO";
-      }
-      else if (calculo >= 30 && calculo < 39.9) {
-        elem.innerHTML = "VOCÊ ESTÁ COM OBESIDADE";
-      }
-      else if (calculo > 40)
-        elem.innerHTML = "VOCÊ ESTÁ COM OBESIDADE GRAVE";
-
+  <style>
+    .redondo {
+      width: 200px;
+      height: 200px;
+      background-color: #000;
+      color: #FFF;
+      border-radius: 50%;
     }
-  </script>
+  </style>
+
 
 </head>
 
 <body style="padding: 20px">
-  <form name="imcForm" id="imcForm" action="#">
-    <div class="panel panel-primary">
-      <div class="panel-heading">Calcule seu IMC</div>
-      <div class="panel-body">
-
-        <div class="form-group">
-          <label for="peso">Peso:</label>
-          <div class="input-group">
-            <input id="peso" type="text" class="form-control input-lg" placeholder="Digite o seu Peso">
-            <span class="input-group-addon">Kg</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="altura">Altura:</label>
-          <div class="input-group">
-            <input id="altura" type="text" class="form-control input-lg" placeholder="Digite sua Altura">
-            <span class="input-group-addon">m</span>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="sexo">Sexo:</label>
-          <select class="form-control input-lg" id="sexo">
-            <option>Masculino</option>
-            <option>Feminino</option>
-          </select>
-        </div>
-
-        <button type="button" class="btn btn-primary btn-lg" onclick="calcula_imc()">Calcular</button>
-
-        <div class="alert">
-          <label id="resultado"></label>
-        </div>
-
-      </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <img class="redondo" src="pp.jpg">
+      <h1>Carlos Eduardo Teles Rosa</h1>
+      Nasci em Goiânia no dia 12 de Janeiro de 1992. Inicialmente cursei o curso de Ciências da Computação na UFG, mas transferi
+      o curso e atualmente estou cursando Sistemas de Informação. Desenvolvimento de sitemas é um hobby, sempre tive prazer
+      em trabalhar com computadores.
     </div>
-  </form>
+  </div>
 </body>
 
 </html>
